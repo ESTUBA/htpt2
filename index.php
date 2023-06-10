@@ -1,7 +1,5 @@
 <?php
 
-require_once "config.php";
-
 define("ROOT", $_SERVER['DOCUMENT_ROOT'] .DIRECTORY_SEPARATOR );
 
 spl_autoload_register('loader');
