@@ -21,7 +21,7 @@ final class App
                 $players[] = $player;
             }
             $team['players'] = $players;
-            $team['stats'] = isset($player['stats']) ?  json_decode($team['stats'],true):null;
+            $team['stats'] = isset($team['stats']) ?  json_decode($team['stats'],true):null;
             $teams[] = $team;
         }
         $this->loadView('home.php', ['teams'=>$teams]);

@@ -81,8 +81,8 @@
 
         <div class="row mt-4">
 
-            <div class="col-md-4">
-                <div class="stats p-3">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="stats p-3 w-100">
 
                     <h2>Bans</h2>
                     <?php if(isset($team['stats']) && isset($team['stats']['bans'])){?>
@@ -99,8 +99,8 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stats p-3">
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="stats p-3 w-100">
 
                     <h2>Bans Against</h2>
                     <?php if(isset($team['stats']) && isset($team['stats']['bans_against'])){?>
@@ -117,8 +117,8 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stats p-3">
+            <div class="col-md-4  d-flex align-items-stretch">
+                <div class="stats w-100 p-3">
 
                     <h2>Picks</h2>
                     <?php if(isset($team['stats']) && isset($team['stats']['picks'])){?>
