@@ -31,7 +31,7 @@
         </div>
 
         <div class="row mt-4 ">
-            <div class="col-12 d-flex align-items-start x-scroll">
+            <div class="col-12 d-flex align-items-stretch x-scroll">
                 <?php foreach ($team['players'] as $player) { ?>
                     <div class="player text-center">
 
@@ -49,6 +49,7 @@
                         </div>
 
                         <hr>
+                        <?php if(isset($player['accounts']) && isset($player['accounts']['accounts'])){?>
                         <?php foreach ($player['accounts']['accounts'] as $history){ ?>
                             <div class="player_accounts">
                                 <a href="<?= $history['opgg'] ?>"><?= $history['account_name'] ?></a>
@@ -56,9 +57,10 @@
                                 <p><span>soloq:</span> <?= $history['soloq'] ?></p>
                             </div>
                         <?php } ?>
+                        <?php } ?>
 
                         <hr>
-
+                        <?php if(isset($player['accounts']) && isset($player['accounts']['history'])){?>
                         <?php foreach (array_slice($player['accounts']['history'], 0,10) as $history){ ?>
                             <div class="player_history d-flex">
                                 <img src="<?= $history['icon'] ?>" alt="">
@@ -69,6 +71,7 @@
                                 </div>
 
                             </div>
+                        <?php } ?>
                         <?php } ?>
 
                     </div>
@@ -82,7 +85,7 @@
                 <div class="stats p-3">
 
                     <h2>Bans</h2>
-
+                    <?php if(isset($team['stats']) && isset($team['stats']['bans'])){?>
                     <?php foreach (array_slice($team['stats']['bans'], 0,10) as $stat){ ?>
                         <div class="d-flex align-items-center mb-1">
                             <img src="<?= $stat['icon'] ?>" class="me-3" alt="<?= $stat['name'] ?>">
@@ -93,13 +96,14 @@
 
                         </div>
                     <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stats p-3">
 
                     <h2>Bans Against</h2>
-
+                    <?php if(isset($team['stats']) && isset($team['stats']['bans_against'])){?>
                     <?php foreach (array_slice($team['stats']['bans_against'], 0,10) as $stat){ ?>
                         <div class="d-flex align-items-center mb-1">
                             <img src="<?= $stat['icon'] ?>" class="me-3" alt="<?= $stat['name'] ?>">
@@ -110,13 +114,14 @@
 
                         </div>
                     <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stats p-3">
 
                     <h2>Picks</h2>
-
+                    <?php if(isset($team['stats']) && isset($team['stats']['picks'])){?>
                     <?php foreach (array_slice($team['stats']['picks'], 0,10) as $stat){ ?>
                         <div class="d-flex align-items-center mb-1">
                             <img src="<?= $stat['icon'] ?>" class="me-3" alt="<?= $stat['name'] ?>">
@@ -126,6 +131,7 @@
                             </div>
 
                         </div>
+                    <?php } ?>
                     <?php } ?>
                 </div>
             </div>

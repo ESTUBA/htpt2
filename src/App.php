@@ -17,11 +17,11 @@ final class App
         foreach ($this->database->getAllTeams() as $team){
             $players = [];
             foreach ($this->database->getAllTeamPlayers($team['id']) as $player){
-                $player['accounts'] = json_decode($player['accounts'],true);
+                $player['accounts'] = isset($player['accounts']) ? json_decode($player['accounts'],true) : null;
                 $players[] = $player;
             }
             $team['players'] = $players;
-            $team['stats'] = json_decode($team['stats'],true);
+            $team['stats'] = isset($player['stats']) ?  json_decode($team['stats'],true):null;
             $teams[] = $team;
         }
         $this->loadView('home.php', ['teams'=>$teams]);
