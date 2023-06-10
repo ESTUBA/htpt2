@@ -1,0 +1,105 @@
+body {
+    background-color: #001017;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.stats{
+    background-color: #001017;
+}
+p {
+    margin-bottom: 0 !important;
+    text-align: left;
+}
+
+.x-scroll{
+    white-space: normal;
+    overflow-x: auto;
+}
+
+.team {
+    background-color: #011925;
+    padding: 50px;
+    min-width: 400px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.player {
+    background: #001017;
+    border-radius: 10px;
+    margin: 0 15px;
+    padding: 15px;
+    min-width: 150px;
+}
+
+.player img {
+    width: 60px;
+    height: 60px;
+}
+
+.player a {
+    font-size: 19px;
+}
+.player small {
+    font-size: 13px;
+    color: gray;
+}
+
+.container {
+    max-width: 1500px;
+}
+
+.player_history{
+    position: relative;
+}
+
+.player_history img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.player_history .info{
+    font-size: 13px;
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+.player_history .info span{
+    color: gray;
+}
+
+.player_accounts{
+    font-size: 13px;
+    text-align: left;
+}
+
+.stats img{
+    width: 50px;
+    height: 50px;
+}
+.stats{
+    border-radius: 10px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #011925;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #001017;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

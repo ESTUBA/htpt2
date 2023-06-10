@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  web:
+    image: ghcr.io/andrejvysny/php-apache:8.1
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html/public
