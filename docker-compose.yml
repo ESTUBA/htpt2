@@ -2,6 +2,7 @@ version: "3"
 
 services:
   web:
+    platform: linux/amd64
     image: ghcr.io/andrejvysny/php-apache:8.1
     ports:
       - "80:80"
