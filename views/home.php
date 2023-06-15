@@ -16,8 +16,15 @@
 </head>
 
 <body>
+    <div class="row mt-4">
+        <div class="container col-12 text-right ">
+            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1PEFs0KvYk1tM-sXwuHHnzCeKWCPXEM_Ds-p-ivLGinI/edit?fbclid=IwAR0zgmVQhR-EfkuvxSPeDF9TyqCitBbcKvy2Y2PUw1w8pbsyT9Ka9aAMSL8#gid=267284655" type="button" class="btn btn-success">Google Sheets : ESTUBA Hry</a>
+            <a target="_blank" href="https://lol.fandom.com/wiki/Hitpoint_2nd_Division_Challengers/2023_Season/Summer_Season" type="button" class="btn btn-danger">Wiki : Hitpoint Challengers</a>
+            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1TXBMJGrtywM3PfhnDObNpOqdx1vGwnwl3k9HumU0eTU/edit?fbclid=IwAR0k4dRiPNjtViJnH-nvk76_xoa7VQu6jDNOhkWZSDui4H2FCs6AJJpLWeA#gid=122913888" type="button" class="btn btn-danger">Google Sheets : Hitpoint Challengers</a>
+            <a target="_blank" href="https://drafting.gg" type="button" class="btn btn-dark">Drafting.gg</a>
+        </div>
 
-
+    </div>
     <?php foreach ($teams as $team) { ?>
         <div class="container my-5 team mx-auto">
 
@@ -37,7 +44,7 @@
                                 <img class="me-2" src="<?= $player['icon']; ?>" />
                                 <div>
                                     <p>
-                                        <a href="<?= $player['lolprosurl'] ?>"><?= $player['name']; ?></a>
+                                        <a target="_blank" href="<?= $player['lolprosurl'] ?>"><?= $player['name']; ?></a>
                                     </p>
                                     <p>
                                         <small>updated: <?= date_format(date_create($team['last_update']), "H:i d.m.Y "); ?></small>
@@ -50,9 +57,8 @@
                             <?php if (isset($player['accounts']) && isset($player['accounts']['accounts'])) { ?>
                                 <?php foreach ($player['accounts']['accounts'] as $history) { ?>
                                     <div class="player_accounts">
-                                        <a href="<?= $history['opgg'] ?>"><?= $history['account_name'] ?></a>
-                                        <p><span>flexq:</span> <?= $history['flexq'] ?></p>
-                                        <p><span>soloq:</span> <?= $history['soloq'] ?></p>
+                                        <a target="_blank" href="<?= $history['opgg'] ?>"><?= $history['account_name'] ?></a>
+                                        <p><?= $history['soloq'] ?></p>
                                     </div>
                                 <?php } ?>
                             <?php } ?>
@@ -93,37 +99,37 @@
                                                 <p><?= $stat['name'] ?></p>
                                                 <p>count: <?= $stat['count'] ?? 0 ?></p>
                                             </div>
-                                            
+
                                         </div>
-                                        <?php } ?>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                <h4>Red</h4>
-                                <div class="stats p-3 w-100">
-                                    <?php if (isset($team['stats']) && isset($team['stats']['bans']['red'])) { ?>
-                                        <?php foreach (array_slice($team['stats']['bans']['red'], 0, 10) as $stat) { ?>
-                                            <div class="d-flex align-items-center mb-1">
-                                                <img src="<?= $stat['icon'] ?>" class="me-3" alt="<?= $stat['name'] ?>">
-                                                <div>
-                                                    <p><?= $stat['name'] ?></p>
-                                                    <p>count: <?= $stat['count'] ?? 0 ?></p>
-                                                </div>
-    
-                                            </div>
-                                        <?php } ?>
                                     <?php } ?>
-                                </div>
+                                <?php } ?>
                             </div>
+                        </div>
+                        <div class="col-6">
+                            <h4>Red</h4>
+                            <div class="stats p-3 w-100">
+                                <?php if (isset($team['stats']) && isset($team['stats']['bans']['red'])) { ?>
+                                    <?php foreach (array_slice($team['stats']['bans']['red'], 0, 10) as $stat) { ?>
+                                        <div class="d-flex align-items-center mb-1">
+                                            <img src="<?= $stat['icon'] ?>" class="me-3" alt="<?= $stat['name'] ?>">
+                                            <div>
+                                                <p><?= $stat['name'] ?></p>
+                                                <p>count: <?= $stat['count'] ?? 0 ?></p>
+                                            </div>
+
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
                             </div>
+                        </div>
+                    </div>
 
 
                 </div>
                 <div class="col-md-4 d-flex align-items-stretch">
                     <div class="row">
                         <h2>Bans Against</h2>
-                       
+
                         <div class="col-6">
                             <h4>Blue</h4>
                             <div class="stats p-3 w-100">
@@ -166,7 +172,7 @@
                 <div class="col-md-4  d-flex align-items-stretch">
                     <div class="row">
                         <h2>Picks</h2>
-                        
+
                         <div class="col-6">
                             <h4>Blue</h4>
                             <div class="stats w-100 p-3">
